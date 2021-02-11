@@ -1,7 +1,6 @@
 // functions5.rs
 // Make me compile! Execute `rustlings hint functions5` for hints :)
 
-// I AM NOT DONE
 
 fn main() {
     let answer = square(3);
@@ -9,5 +8,7 @@ fn main() {
 }
 
 fn square(num: i32) -> i32 {
-    num * num;
+    //this broke bc the `;` made the line a statement, not an expression, and line 11 says we're expecting an expression (by putting the `-> i32 {` )
+    // num * num;
+    num * num
 }
