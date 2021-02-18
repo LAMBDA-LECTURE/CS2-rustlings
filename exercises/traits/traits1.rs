@@ -10,12 +10,20 @@
 
 // I AM NOT DONE
 
+//trait block doesn't implement logic, only what implementors of trait will need
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
+//implement the logic itself here
 impl AppendBar for String {
     //Add your code here
+    fn append_bar(mut self) -> Self{
+        self.push_str("Bar");
+        self
+    }
+
+
 }
 
 fn main() {

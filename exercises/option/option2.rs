@@ -1,12 +1,11 @@
 // option2.rs
 // Make me compile! Execute `rustlings hint option2` for hints
 
-// I AM NOT DONE
 
 fn main() {
     let optional_value = Some(String::from("rustlings"));
     // TODO: Make this an if let statement whose value is "Some" type
-    value = optional_value {
+    if let Some(value) = optional_value {
         println!("the value of optional value is: {}", value);
     } else {
         println!("The optional value doesn't contain anything!");
@@ -18,8 +17,13 @@ fn main() {
     }
 
     // TODO: make this a while let statement - remember that vector.pop also adds another layer of Option<T>
-    // You can stack `Option<T>`'s into while let and if let
-    value = optional_values_vec.pop() {
-        println!("current value: {}", value);
+    //using pattern matching
+    // while let Some(Some(value)) = optional_values_vec.pop() {
+        // You can stack `Option<T>`'s into while let and if let
+    while let Some(value) = optional_values_vec.pop() {
+        //includes type
+        println!("current value: {:?}", value);
+        //just prints inside bits, but if there's a None here, it will cause panic
+        // println!("current value: {}", value.unwrap());
     }
 }
